@@ -59,24 +59,20 @@ class App extends Component {
     this.setState({ activeMenu: this.state.activeMenu ? (menu === this.state.activeMenu ? null : menu) : menu });
   }
 
-  chooseOption = (option) => () => {
-    this.setState({ [option]: !this.state[option] });
+  chooseRoomType = (entireRoom, privateRoom, sharedRoom) => {
+    this.setState({
+      entireRoomOption: entireRoom,
+      privateRoomOption: privateRoom,
+      sharedRoomOption: sharedRoom,
+    });
   }
 
-  addAdultGuest = () => {
-    this.setState({ adultGuestsQty: this.state.adultGuestsQty + 1 })
-  }
-
-  reduceAdultGuest = () => {
-    this.setState({ adultGuestsQty: this.state.adultGuestsQty - 1 })
-  }
-
-  addGuest = (guest) => () => {
-    this.setState({ [guest]: this.state[guest] + 1 })
-  }
-
-  reduceGuest = (guest) => () => {
-    this.setState({ [guest]: this.state[guest] - 1 })
+  chooseGuestsQty = (adultGuests, childrenGuests, infantsGuests) => {
+    this.setState({
+      adultGuestsQty: adultGuests,
+      childrenGuestsQty: childrenGuests,
+      infantsGuestsQty: infantsGuests,
+    })
   }
 
   render() {
@@ -85,9 +81,9 @@ class App extends Component {
         <div style={{ display: 'flex', flexDirection: 'row', padding: '13px 10px', borderBottom: '1px solid #ddd' }}>
           <MenuItem label="Room type" arrow={this.state.activeMenu === 'room_type' ? ('ᗗ') : 'ᗖ'} onClick={this.toggleMenu('room_type')} isOpen={this.state.activeMenu === 'room_type'}>
             <RoomTypeMenu
-              onClickEntire={this.chooseOption('entireRoomOption')}
-              onClickPrivate={this.chooseOption('privateRoomOption')}
-              onClickShared={this.chooseOption('sharedRoomOption')}
+              onSelect={this.chooseRoomType}
+              onApply={this.toggleMenu('room_type')}
+              onCancel={this.toggleMenu('room_type')}
               activeEntire={this.state.entireRoomOption}
               activePrivate={this.state.privateRoomOption}
               activeShared={this.state.sharedRoomOption}
@@ -99,12 +95,9 @@ class App extends Component {
               adultGuestsQty={this.state.adultGuestsQty}
               childrenGuestsQty={this.state.childrenGuestsQty}
               infantsGuestsQty={this.state.infantsGuestsQty}
-              addAdultGuest={this.addAdultGuest}
-              reduceAdultGuest={this.reduceAdultGuest}
-              addChildrenGuest={this.addGuest('childrenGuestsQty')}
-              reduceChildrenGuest={this.reduceGuest('childrenGuestsQty')}
-              addInfantsGuest={this.addGuest('infantsGuestsQty')}
-              reduceInfantsGuest={this.reduceGuest('infantsGuestsQty')}
+              onChange={this.chooseGuestsQty}
+              onApply={this.toggleMenu('guests')}
+              onCancel={this.toggleMenu('guests')}
             />
           </MenuItem>
         </div>
