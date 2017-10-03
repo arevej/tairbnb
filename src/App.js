@@ -79,7 +79,7 @@ class App extends Component {
     return (
       <div>
         <div style={{ display: 'flex', flexDirection: 'row', padding: '13px 10px', borderBottom: '1px solid #ddd' }}>
-          <MenuItem label="Room type" arrow={this.state.activeMenu === 'room_type' ? ('ᗗ') : 'ᗖ'} onClick={this.toggleMenu('room_type')} isOpen={this.state.activeMenu === 'room_type'}>
+          <MenuItem label="Room type" onClick={this.toggleMenu('room_type')} isOpen={this.state.activeMenu === 'room_type'}>
             <RoomTypeMenu
               onSelect={this.chooseRoomType}
               onApply={this.toggleMenu('room_type')}
@@ -90,7 +90,7 @@ class App extends Component {
             />
           </MenuItem>
 
-          <MenuItem label="Guests" arrow={this.state.activeMenu === 'guests' ? ('ᗗ') : 'ᗖ'} onClick={this.toggleMenu('guests')} isOpen={this.state.activeMenu === 'guests'}>
+          <MenuItem label="Guests" onClick={this.toggleMenu('guests')} isOpen={this.state.activeMenu === 'guests'}>
             <GuestsMenu
               adultGuestsQty={this.state.adultGuestsQty}
               childrenGuestsQty={this.state.childrenGuestsQty}
