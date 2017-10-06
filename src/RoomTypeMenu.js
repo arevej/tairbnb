@@ -77,7 +77,7 @@ class RoomTypeMenu extends Component {
           <OptionMenuTitle label='Private room' onSelect={this.chooseOption('activePrivate')} optionActive={activePrivate} />
           Have your own room and share some common spaces
         </div>
-        <div style={{ marginBottom: 20 }}>
+        <div style={{ marginBottom: 15 }}>
           <OptionMenuTitle label='Shared room' onSelect={this.chooseOption('activeShared')} optionActive={activeShared} />
           Stay in a shared space, like a common room
         </div>

@@ -54,7 +54,7 @@ class GuestsMenu extends Component {
             canAdd={childrenGuestsQty + adultGuestsQty < 16}
           />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', paddingBottom: 20}}>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', paddingBottom: 15}}>
           <h3 style={{ flex: 1, margin: 0, fontWeight: 300 }}>Infants <span style={{ fontSize: 15}}>(Under 2)</span></h3>
           <AddReduceController
             guestsQty={infantsGuestsQty}
