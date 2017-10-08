@@ -4,7 +4,7 @@ function MenuButton({ label, onClick, isOpen }) {
   return (
     <div className='menu-button' style={{ background: isOpen ? '#eee' : 'transparent' }} onClick={onClick}>
       {label}
-      <span style={{ paddingLeft: 5, color: '#444', fontSize: 12 }}>{isOpen ? 'ᗗ' : 'ᗖ'}</span>
+      <span style={{ display: 'inline-block', marginLeft: 5, color: '#444', fontSize: 12, transition: '0.2s all', transform: !isOpen ? 'rotate(180deg)' : null }}>ᗗ</span>
     </div>
   )
 }
