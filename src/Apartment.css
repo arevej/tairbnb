@@ -1,0 +1,126 @@
+.main-pic {
+  height: 500px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 0 auto;
+  font-family: Helvetica;
+}
+
+.sticky-menu {
+  border-bottom: 1px solid #ccc;
+  padding: 18px 0;
+}
+
+.sticky-menu a {
+  margin: 10px 0;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #008489;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s all;
+}
+
+.sticky-menu a:hover {
+  border-bottom: 1px solid #008489;
+}
+
+.sticky-menu a.active {
+  color: #000;
+}
+.sticky-menu a.active:hover {
+  border-bottom: 1px solid #000;
+}
+
+.main-info-box {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 6px;
+}
+
+h1 {
+  color: #444;
+}
+
+.sub-header-links a {
+  color: #444;
+  font-weight: 300;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.main-info span {
+  color: #444;
+  font-weight: 300;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.owner-pic {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+  color: #444;
+}
+
+.owner-pic img {
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+  padding-bottom: 8px;
+}
+
+.translate-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: 1px solid #aaa;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  text-decoration: none;
+  transition: 0.1s all;
+}
+
+.translate-button:hover {
+  border: 1px solid #777;
+}
+
+.description {
+  line-height: 23px;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.description h3 {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.text-button {
+  margin: 22px 0;
+  text-decoration: none;
+  color: #008489;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s all;
+}
+
+.text-button:hover {
+  border-bottom: 1px solid #008489;
+}
+
+.line {
+  margin: 22px 0;
+  border-bottom: 1px solid #ccc;
+}
