@@ -145,7 +145,7 @@ class ApartmentList extends Component {
 class App extends Component {
   state = {
     apartments: [
-      { id: 1, price: 10, city: 'Paris', name: 'Amazing flat', type: 'Entire apartment', guests: 4, beds: 2, bath: 2, bedrooms: 3, stars: 5,
+      { id: 1, price: 10, extraPeoplePrice: 8, deposit: 11, cleaningFee: 13, city: 'Paris', name: 'Amazing flat', type: 'Entire apartment', guests: 4, beds: 2, bath: 2, bedrooms: 3, stars: 5,
         pics: [
           'https://a0.muscache.com/im/pictures/af757c0a-28d6-49f3-8ed1-85fb713e3a6a.jpg?aki_policy=xx_large',
           'https://a0.muscache.com/im/pictures/1546d912-88d8-41de-9ee6-27eda2d06549.jpg?aki_policy=xx_large',
@@ -153,8 +153,8 @@ class App extends Component {
         ],
         description: '<p>Located in a quiet area of the city (P. Mstislavets St., Building 5), on the 1st floor of a 10-storey building in Minsk "Mayak Minsk". The apartment has everything for your convenience: built-in appliances in the kitchen, dishes, washing machine, hairdryer, iron, towels, bed linen, loggia. Near the house there are a lot of parking places.</p> <h3>The space</h3><p>The apartment is made fresh renovation, cleanliness and comfort are guaranteed.</p><h3>Guest access</h3><p>The apartment has a well equipped kitchen, oven, microwave. In the bedroom there is a large double bed. In the living room a comfortable sofa bed, a TV set with many channels. Wi-fi in the whole apartment.</p><h3>Interaction with guests</h3><p>Communication with guests during their stay is guaranteed, if necessary, we will provide car rental services, meeting-seeing-off from the railway station or airport, etc.</p>'
       },
-      { id: 2, price: 40, city: 'Paris', name: 'Аlat', type: 'Entire apartment', guests: 5, beds: 3, bath: 1, bedrooms: 2, stars: 3, pics: ['https://a0.muscache.com/im/pictures/af757c0a-28d6-49f3-8ed1-85fb713e3a6a.jpg?aki_policy=xx_large'] },
-      { id: 3, price: 50, city: 'Paris', name: 'Fgags', type: 'Entire apartment', guests: 8, beds: 4, bath: 1, bedrooms: 4, stars: 2, pics: ['https://a0.muscache.com/im/pictures/af757c0a-28d6-49f3-8ed1-85fb713e3a6a.jpg?aki_policy=xx_large'] },
+      { id: 2, price: 40, extraPeoplePrice: 15, deposit: 18, cleaningFee: 20, city: 'Paris', name: 'Аlat', type: 'Entire apartment', guests: 5, beds: 3, bath: 1, bedrooms: 2, stars: 3, pics: ['https://a0.muscache.com/im/pictures/af757c0a-28d6-49f3-8ed1-85fb713e3a6a.jpg?aki_policy=xx_large'] },
+      { id: 3, price: 80, extraPeoplePrice: 50, deposit: 23, cleaningFee: 34, city: 'Paris', name: 'Fgags', type: 'Entire apartment', guests: 8, beds: 4, bath: 1, bedrooms: 4, stars: 2, pics: ['https://a0.muscache.com/im/pictures/af757c0a-28d6-49f3-8ed1-85fb713e3a6a.jpg?aki_policy=xx_large'] },
     ],
   };
 
