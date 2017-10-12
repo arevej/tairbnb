@@ -51,6 +51,32 @@ function OutlineButton({ label, onClick }) {
   )
 }
 
+function Line({ }) {
+  return (
+    <div className='line'></div>
+  )
+}
+
+function InfoBlock({ header, children }) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <h4 className='services-header'>{header}</h4>
+      {children}
+    </div>
+  )
+}
+
+function InfoColumnsBlock({ header, children }) {
+  return (
+    <div>
+      <h4 className='services-header'>{header}</h4>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        {children}
+      </div>
+    </div>
+  )
+}
+
 
 class Apartment extends Component {
   state = {
@@ -83,68 +109,106 @@ class Apartment extends Component {
             <OutlineButton label='Translate this description to other language' />
             <div className='description' dangerouslySetInnerHTML={{__html: apartment.description}} />
             <a href='#'>Contact host</a>
-            <div className='line'></div>
-            <div>
-              <h4 className='services-header'>Amenities</h4>
-              <div style={{ display: 'flex', flexDirection: 'row'}}>
-                <div className='column'>
-                  <span>Pets allowed</span>
-                  <span>Elevator</span>
-                  <span>Internet</span>
-                  <span>Kitchen</span>
-                  <span>Pool</span>
-                  <span>Gym</span>
-                  <span>Wheelchair accessible</span>
-                  <span>Wireless Internet</span>
-                  <span>Smoking allowed</span>
-                  <span>Family/kid friendly</span>
-                  <span>Indoor fireplace</span>
-                  <span>Free parking on premises</span>
-                  <span>Hot tub</span>
-                  <span>Breakfast</span>
-                  <span>Dryer</span>
-                  <span>Suitable for events</span>
-                </div>
-                <div className='column'>
-                  <span>Hair dryer</span>
-                  <span>Air conditioning</span>
-                  <span>Buzzer/wireless intercom</span>
-                  <span>Hangers</span>
-                  <span>Iron</span>
-                  <span>Laptop friendly workspace</span>
-                  <span>Heating</span>
-                  <span>Shampoo</span>
-                  <span>TV</span>
-                  <span>Washer</span>
-                  <span>Cable TV</span>
-                  <span>Essentials</span>
-                  <span>Paid parking off premises</span>
-                  <span>Private entrance</span>
-                  <span>Free parking on street</span>
-                  <span>Doorman</span>
-                </div>
+            <Line />
+            <InfoColumnsBlock header='Amenities'>
+              <div className='column'>
+                <span>Pets allowed</span>
+                <span>Elevator</span>
+                <span>Internet</span>
+                <span>Kitchen</span>
+                <span>Pool</span>
+                <span>Gym</span>
+                <span>Wheelchair accessible</span>
+                <span>Wireless Internet</span>
+                <span>Smoking allowed</span>
+                <span>Family/kid friendly</span>
+                <span>Indoor fireplace</span>
+                <span>Free parking on premises</span>
+                <span>Hot tub</span>
+                <span>Breakfast</span>
+                <span>Dryer</span>
+                <span>Suitable for events</span>
+              </div>
+              <div className='column'>
+                <span>Hair dryer</span>
+                <span>Air conditioning</span>
+                <span>Buzzer/wireless intercom</span>
+                <span>Hangers</span>
+                <span>Iron</span>
+                <span>Laptop friendly workspace</span>
+                <span>Heating</span>
+                <span>Shampoo</span>
+                <span>TV</span>
+                <span>Washer</span>
+                <span>Cable TV</span>
+                <span>Essentials</span>
+                <span>Paid parking off premises</span>
+                <span>Private entrance</span>
+                <span>Free parking on street</span>
+                <span>Doorman</span>
+              </div>
+            </InfoColumnsBlock>
+            <Line />
+            <InfoColumnsBlock header='Prices'>
+              <div className='column'>
+                <span>Extra people <b>${apartment.extraPeoplePrice} / night after the first guest</b></span>
+                <span>Cleaning Fee <b>${apartment.cleaningFee}</b></span>
+              </div>
+              <div className='column'>
+                <span>Security Deposit <b>${apartment.deposit}</b></span>
+              </div>
+            </InfoColumnsBlock>
+            <div className='payment-info'>
+              <h4>Always communicate through Airbnb</h4>
+              <span>To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</span>
+              <div>
+                <a href='#'>Learn more</a>
               </div>
             </div>
-            <div className='line'></div>
-            <div>
-              <h4 className='services-header'>Prices</h4>
-              <div style={{ display: 'flex', flexDirection: 'row'}}>
-                <div className='column'>
-                  <span>Extra people <b>${apartment.extraPeoplePrice} / night after the first guest</b></span>
-                  <span>Cleaning Fee <b>${apartment.cleaningFee}</b></span>
-                </div>
-                <div className='column'>
-                  <span>Security Deposit <b>${apartment.deposit}</b></span>
-                </div>
+            <Line />
+            <InfoBlock header='Sleeping arrangements'>
+              <span>🛏</span>
+              <b>Common spaces</b>
+              <span>1 sofa bed, 1 bunk bed</span>
+            </InfoBlock>
+            <Line />
+            <InfoBlock header='House Rules'>
+              <span>No smoking</span>
+              <span>Not suitable for pets</span>
+              <span>No parties or events</span>
+              <span>Check in time is 3PM - 8PM</span>
+              <span>Check out by 11AM</span>
+            </InfoBlock>
+            <Line />
+            <InfoBlock header='Cancellations'>
+              <span>This host has a <b>Moderate Cancellation Policy</b></span>
+              <span>Cancel up to 7 days before your trip and get a full refund. Cancel within 7 days of the trip and get a 50% refund of the nightly rate, as well as a full refund of fees.</span>
+              <div>
+                <a href='#'>View details</a>
               </div>
-              <div className='payment-info'>
-                <h4>Always communicate through Airbnb</h4>
-                <span>To protect your payment, never transfer money or communicate outside of the Airbnb website or app.</span>
-              </div>
-              <a href='#'>Learn more</a>
-            </div>
-            <div className='line'></div>
+            </InfoBlock>
 
+            <Line />
+            <InfoBlock header='Accessibility'>
+              <span>Elevator</span>
+            </InfoBlock>
+            <Line />
+            <div>
+              <h4 className='services-header'>Availability</h4>
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <span style={{ flex: 1}}><b>1 night</b> minimum stay</span>
+                <div style={{ flex: 1}}>
+                  <a href='#'>View calendar</a>
+                </div>
+              </div>
+            </div>
+            <Line />
+            //<div>
+            //  <h2>
+            //    {apartment.reviewCount === 0 ? 'No reviews (yet)' : apartment.reviewCount + ' reviews'}
+            //    <Stars stars={apartment.stars} />
+            //  </h2>
+            //</div>
 
           </div>
           <div style={{ backgroundColor: '#ccc', width: 350 }}>
